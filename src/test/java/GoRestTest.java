@@ -31,7 +31,6 @@ public class GoRestTest {
                 .build();
     }
 
-
     @Test
     @Order(0)
     @DisplayName("Create a new user")
