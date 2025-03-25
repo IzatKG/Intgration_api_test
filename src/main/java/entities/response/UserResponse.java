@@ -1,4 +1,4 @@
-package entity.response;
+package entities.response;
 
 import lombok.Data;
 

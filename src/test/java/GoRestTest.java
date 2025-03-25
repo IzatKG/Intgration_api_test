@@ -1,6 +1,8 @@
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
+import config.Owner;
+import config.Owners;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
@@ -13,7 +15,8 @@ import static endpoints.UserApiEndpoints.USERS;
 import static io.restassured.RestAssured.given;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class GoRestTest {
+@Owner(Owners.IZAT)
+public class GoRestTest extends BaseTest {
     protected static RequestSpecification requestSpecification;
     public ObjectMapper objectMapper = new ObjectMapper();
     public Faker faker = new Faker();
@@ -24,7 +27,7 @@ public class GoRestTest {
     @BeforeAll
     public static void setUp(){
         requestSpecification = new RequestSpecBuilder()
-                .setBaseUri("https://gorest.co.in/public/v2/")
+                .setBaseUri(config.baseUrl())
                 .addHeader("Authorization", "Bearer " + token)
                 .setContentType(ContentType.JSON)
                 .setAccept(ContentType.JSON)
