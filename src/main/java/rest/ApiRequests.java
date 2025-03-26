@@ -43,6 +43,17 @@ public abstract class ApiRequests {
         GetLogResponse();
         return response;
     }
+    public Response get(String endpoint){
+        log.info("Send get {}", endpoint);
+
+        this.response = given()
+                .spec(this.requestSpec)
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .get(endpoint);
+        GetLogResponse();
+        return response;
+    }
 
     public static String getEndpoint(String... args) {
         StringBuilder endPoint = new StringBuilder();

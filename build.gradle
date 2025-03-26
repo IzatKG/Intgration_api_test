@@ -22,6 +22,8 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.2'
     implementation 'com.github.javafaker:javafaker:1.0.2'
     implementation 'org.aeonbits.owner:owner:1.0.12'
+    // https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
 }
 
 test {
