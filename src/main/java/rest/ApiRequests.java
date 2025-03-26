@@ -35,16 +35,15 @@ public abstract class ApiRequests {
 
         this.response = given()
                 .spec(this.requestSpec)
-                .header(headers)
                 .contentType(ContentType.JSON)
                 .accept(ContentType.JSON)
                 .body(body)
                 .post(endpoint);
-               // .then()
-               // .extract().response();
+
         GetLogResponse();
         return response;
     }
+
     public static String getEndpoint(String... args) {
         StringBuilder endPoint = new StringBuilder();
         for (String arg : args) {
