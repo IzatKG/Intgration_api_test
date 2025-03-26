@@ -6,6 +6,7 @@ import rest.ApiRequests;
 import utils.Data;
 import utils.JsonConvertor;
 
+import static endpoints.UserApiEndpoints.USER;
 import static endpoints.UserApiEndpoints.USERS;
 
 public class UserController extends ApiRequests {
@@ -18,5 +19,9 @@ public class UserController extends ApiRequests {
     }
     public Response getNewUser(){
         return  super.get( getEndpoint(USERS));
+    }
+
+    public Response getNewUserById(int id){
+        return  super.get( getEndpoint(USER + id));
     }
 }
