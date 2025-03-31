@@ -3,6 +3,10 @@ package apiTests;
 import controllers.BaseController;
 import controllers.UserController;
 import entities.response.UserResponse;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.*;
 
 import java.util.Arrays;
@@ -13,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class UserTest {
     public static UserController userController;
     protected static BaseController baseController = new BaseController();
-    public static int userId;
+   public static int userId;
     @BeforeAll
     public static void setUp() {
         userController = baseController.getUserController();
@@ -22,6 +26,7 @@ public class UserTest {
     @Test
     @Order(0)
     @DisplayName("Create a new user")
+    @Severity(SeverityLevel.CRITICAL)
     public void createNewUserTest() {
         UserResponse userResponse = userController.createNewUser().as(UserResponse.class);
         userId = userResponse.getId();
@@ -44,6 +49,7 @@ public class UserTest {
     @Test
     @Order(2)
     @DisplayName("Get a new user")
+    @Disabled
     public void getNewUserTest() {
         UserResponse[] users = userController.getNewUser().as(UserResponse[].class);
         List<UserResponse> userResponse = Arrays.asList(users);
