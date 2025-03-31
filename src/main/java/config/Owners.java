@@ -1,5 +1,5 @@
 package config;
 
 public class Owners {
-    public static final String IZAT = "Izat";
+    public static final String LEONID = "Leonid";
 }

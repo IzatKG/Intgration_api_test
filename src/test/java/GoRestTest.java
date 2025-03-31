@@ -15,7 +15,7 @@ import static endpoints.UserApiEndpoints.USERS;
 import static io.restassured.RestAssured.given;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-@Owner(Owners.IZAT)
+@Owner(Owners.LEONID)
 public class GoRestTest extends BaseTest {
     protected static RequestSpecification requestSpecification;
     public ObjectMapper objectMapper = new ObjectMapper();
